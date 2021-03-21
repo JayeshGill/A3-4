@@ -60,7 +60,8 @@ return run_query($dbconn, $query);
 }
 
 function delete_article($dbconn, $aid) {
-	$query= "DELETE FROM articles WHERE aid='".$aid."'";
+	$query= "DELETE FROM articles WHERE 
+		aid='".$aid."' AND author='1'" ;
 	return run_query($dbconn, $query);
 }
 
@@ -88,8 +89,7 @@ function update_article($dbconn, $title, $content, $aid) {
 }
 
 function authenticate_user($dbconn, $username, $password) {
-	$query=
-		"SELECT
+	$query= "SELECT
 		authors.id as id,
 		authors.username as username,
 		authors.password as password,

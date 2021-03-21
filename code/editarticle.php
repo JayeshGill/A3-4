@@ -31,11 +31,11 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
 	<input type="hidden" value="<?php echo $row['aid'] ?>" name="aid">
 	<div class="form-group">
 	<label for="inputTitle" class="sr-only">Post Title</label>
-	<input type="text" id="inputTitle" required autofocus name='title' value="<?php echo $row['title'] ?>">
+	<input type="text" id="inputTitle" required autofocus name='title' value="<?php echo htmlspecialchars($row['title']) ?>">
 	</div>
 	<div class="form-group">
 	<label for="inputContent" class="sr-only">Post Content</label>
-	<textarea name='content' id="inputContent"><?php echo $row['content'] ?></textarea>
+	<textarea name='content' id="inputContent"><?php echo htmlspecialchars($row['content']) ?></textarea>
 	</div>
 	<input type="submit" value="Update" name="submit" class="btn btn-primary">
 </form>

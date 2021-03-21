@@ -13,7 +13,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title><?php echo $row['title'] ?></title>
+<title><?php echo  htmlspecialchars($row['title']) ?></title>
 	<?php include("templates/header.php"); ?>
 
 
@@ -28,11 +28,11 @@
       	</h3>
 
 	<div class="blog-post">
-	<h2 class="blog-post-title"><?php echo $row['title'] ?></h2>
+	<h2 class="blog-post-title"><?php echo htmlspecialchars($row['title']) ?></h2>
 	<p class="blog-post-meta">
 		<?php echo substr($row['date'], 0, 10)." by ".$row['author'] ?>
 	</p><p>
-		<?php echo $row['content'] ?>
+		<?php echo htmlspecialchars($row['content']) ?>
 	</p>
       </div><!-- /.blog-post -->
 	<?php include("templates/contentstop.php"); ?>

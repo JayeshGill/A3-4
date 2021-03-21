@@ -25,7 +25,7 @@ New Post <span class="fa fa-plus" aria-hidden="true"></span>
 		while ($row = pg_fetch_array($result)) {
 	?>
 <tr>
-  <td><a href='article.php?aid=<?php echo $row['aid'] ?>'><?php echo $row['title'] ?></a></td>
+  <td><a href='article.php?aid=<?php echo $row['aid'] ?>'><?php echo htmlspecialchars($row['title']) ?></a></td>
   <td><?php echo $row['author'] ?></td>
   <td><?php echo substr($row['date'],0,10) ?></td>
   <td><a href="/editarticle.php?aid=<?php echo $row['aid'] ?>"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></td>
